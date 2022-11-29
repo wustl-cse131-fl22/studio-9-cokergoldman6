@@ -20,8 +20,21 @@ public class NameToHeight {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// FIXME
-		throw new NotYetImplementedException();
+		Map<String, Integer> studentHeights = new HashMap<String, Integer>();
+		studentHeights.put("Deji", 72);
+		studentHeights.put("Taylor", 67);
+		System.out.println("Please enter a name to find the associated height. Enter quit to stop.");
+		String name = in.next();
+		while(!name.equals("quit")) {
+			if(studentHeights.get(name) != null) {
+				System.out.println(name + " " + studentHeights.get(name));
+			}
+			else {
+				System.out.println("No height associated with this name.");
+			}
+			System.out.println("Please enter a name to find the associated height. Enter quit to stop.");
+			name = in.next();
+		}
 
 	}
 }
